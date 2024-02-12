@@ -60,6 +60,10 @@ class Program
             {
                 Console.WriteLine($"{e.Message}");
             }
+            catch(FormatException  e)
+            {
+                Console.WriteLine("Input type is not correct");
+            }
 
         } while (choice != '5');
     }
