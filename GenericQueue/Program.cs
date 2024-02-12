@@ -35,7 +35,7 @@ class Program
                         if (!queue.IsEmpty())
                         {
                             queue.Dequeue();
-                            Console.WriteLine("Front element deleted");
+                            Console.WriteLine("Element deleted");
                         }
                         else
                         {
@@ -43,10 +43,10 @@ class Program
                         }
                         break;
                     case '3':
-                        Console.WriteLine($"The stack is empty: {queue.IsEmpty()}");
+                        Console.WriteLine($"The queue is empty: {queue.IsEmpty()}");
                         break;
                     case '4':
-                        Console.WriteLine($"The stack is full: {queue.IsFull()}");
+                        Console.WriteLine($"The queue is full: {queue.IsFull()}");
                         break;
                     case '5':
                         Console.WriteLine("Exited successfully");
@@ -65,7 +65,7 @@ class Program
     }
     static void DisplayMenu()
     {
-        Console.WriteLine("\nGeneric Stack Operations");
+        Console.WriteLine("\nChat Message Queue Operations");
         Console.WriteLine("1.Enqueue");
         Console.WriteLine("2.Dequeue");
         Console.WriteLine("3.IsEmpty");
