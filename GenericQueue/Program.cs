@@ -5,14 +5,14 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Enter the size of the queue:");
+        Console.Write("Enter the size of the queue:");
         int size=Convert.ToInt32 (Console.ReadLine());
         GenericQueue<ChatMessage> queue = new(size);
         char choice;
         do
         {
             DisplayMenu();
-            Console.WriteLine("Enter your choice");
+            Console.Write("Enter your choice:");
             choice = Console.ReadKey().KeyChar;
             Console.WriteLine();
 
@@ -65,7 +65,7 @@ class Program
     }
     static void DisplayMenu()
     {
-        Console.WriteLine("Generic Stack Operations");
+        Console.WriteLine("\nGeneric Stack Operations");
         Console.WriteLine("1.Enqueue");
         Console.WriteLine("2.Dequeue");
         Console.WriteLine("3.IsEmpty");
