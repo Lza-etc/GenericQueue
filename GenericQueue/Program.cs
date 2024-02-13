@@ -70,10 +70,10 @@ class Program
     static void DisplayMenu()
     {
         Console.WriteLine("\nChat Message Queue Operations");
-        Console.WriteLine("1.Enqueue");
-        Console.WriteLine("2.Dequeue");
-        Console.WriteLine("3.IsEmpty");
-        Console.WriteLine("4.IsFull");
-        Console.WriteLine("5.Exit");
+        Console.Write("1.Enqueue");
+        Console.Write("    2.Dequeue");
+        Console.Write("    3.IsEmpty");
+        Console.Write("    4.IsFull");
+        Console.WriteLine("    5.Exit");
     }
 }

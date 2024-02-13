@@ -9,13 +9,13 @@ namespace Generics
 {
     internal class GenericQueue<T> where T : class, new()
     {
-        readonly List<T> queue = new();
+        readonly T[] queue;
         int front=-1;
         int rear = -1;
-        int size;
+
         public GenericQueue(int size)
         {
-            this.size = size;
+            queue = new T[size];
         }
         public void Enqueue(T item)
         {
@@ -27,17 +27,20 @@ namespace Generics
             {
                 item = new T();
             }
-            if (front==-1) front = 0;
-            queue.Add(item);
-            rear++;
+            if (front==-1) 
+                front = rear = 0;
+            else
+                rear=(rear+1)%queue.Length;
+            queue[rear]=item;
         }
         public void Dequeue()
         {
             if (IsEmpty())
                 throw new InvalidOperationException("The queue is empty.");
-            queue.RemoveAt(0);
-            rear--;
-            if(rear==-1) front = -1; 
+            Console.WriteLine(queue[front]);
+            if (rear==front) front = rear=-1;
+            else
+            front = (front + 1) % queue.Length;
         }
         public bool IsEmpty()
         {
@@ -45,7 +48,10 @@ namespace Generics
         }
         public bool IsFull()
         {
-            return rear == size-1;
+            return  front==(rear+1)%queue.Length;
         }
     }
 }
+// size=4
+// 0 1 2 3  
+// front+ rear+1 % 4 =0
